@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvatt = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.btnEstoque = new System.Windows.Forms.Button();
             this.btndetalhes = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.textfunc1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -50,8 +50,16 @@
             // 
             // dgvatt
             // 
-            this.dgvatt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvatt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvatt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvatt.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvatt.Location = new System.Drawing.Point(214, 58);
             this.dgvatt.Name = "dgvatt";
             this.dgvatt.Size = new System.Drawing.Size(413, 206);
@@ -59,7 +67,8 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(69, 21);
@@ -81,7 +90,7 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(708, 21);
@@ -92,7 +101,7 @@
             // 
             // btnaltfun
             // 
-            this.btnaltfun.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnaltfun.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnaltfun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaltfun.Location = new System.Drawing.Point(700, 241);
             this.btnaltfun.Name = "btnaltfun";
@@ -104,7 +113,8 @@
             // 
             // listView1
             // 
-            this.listView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.listView1.Location = new System.Drawing.Point(40, 58);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(121, 97);
@@ -114,7 +124,7 @@
             // 
             // btnfaturamento
             // 
-            this.btnfaturamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnfaturamento.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnfaturamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfaturamento.Location = new System.Drawing.Point(214, 274);
             this.btnfaturamento.Name = "btnfaturamento";
@@ -125,7 +135,7 @@
             // 
             // btnConfiguração
             // 
-            this.btnConfiguração.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnConfiguração.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnConfiguração.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguração.Location = new System.Drawing.Point(351, 274);
             this.btnConfiguração.Name = "btnConfiguração";
@@ -136,7 +146,7 @@
             // 
             // btnEstoque
             // 
-            this.btnEstoque.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEstoque.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstoque.Location = new System.Drawing.Point(487, 274);
             this.btnEstoque.Name = "btnEstoque";
@@ -147,7 +157,7 @@
             // 
             // btndetalhes
             // 
-            this.btndetalhes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btndetalhes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btndetalhes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndetalhes.Location = new System.Drawing.Point(59, 178);
             this.btndetalhes.Name = "btndetalhes";
@@ -158,7 +168,7 @@
             // 
             // btnSair
             // 
-            this.btnSair.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.Location = new System.Drawing.Point(59, 255);
             this.btnSair.Name = "btnSair";
@@ -168,19 +178,9 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(214, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // textfunc1
             // 
+            this.textfunc1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textfunc1.Location = new System.Drawing.Point(695, 58);
             this.textfunc1.Name = "textfunc1";
             this.textfunc1.Size = new System.Drawing.Size(100, 20);
@@ -188,6 +188,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBox2.Location = new System.Drawing.Point(695, 117);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
@@ -195,6 +196,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBox3.Location = new System.Drawing.Point(695, 178);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
@@ -208,13 +210,12 @@
             // 
             // frmPedidos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(857, 307);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textfunc1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btndetalhes);
             this.Controls.Add(this.btnEstoque);
@@ -247,7 +248,6 @@
         private System.Windows.Forms.Button btnEstoque;
         private System.Windows.Forms.Button btndetalhes;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.TextBox textfunc1;

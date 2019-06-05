@@ -64,7 +64,7 @@ namespace Projeto_integrador
         {
             if (txtresenha.Text == txtSenha.Text)
             {
-                string Cadastrar = String.Format(/*"INSERT INTO 'table' VALUES ('{0}','{1}','{2}','{3}','{4}','{5}')"*/ txtnome.Text, txtCel.Text, txtcpf.Text, txtrg.Text, txtemail.Text, txtSenha.Text, txtresenha.Text);
+                string Cadastrar = String.Format("INSERT INTO 'tbusuarios' VALUES ('{0}','{1}','{2}','{3}','{4}','{5}')", txtnome.Text, txtCel.Text, txtcpf.Text, txtrg.Text, txtemail.Text, txtSenha.Text, txtresenha.Text);
                 modifica(Cadastrar);
             }
             else

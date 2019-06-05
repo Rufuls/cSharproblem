@@ -16,32 +16,56 @@ namespace Projeto_integrador
         public frmPedidos()
         {
             InitializeComponent();
+            this.dgvatt.CellFormatting += Dgvatt_CellFormatting;
             
-            
+
+
         }
 
-        public frmPedidos(string text)
+        private void Dgvatt_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            
-            
+            if (e.Value != null && e.Value.Equals("Pendente"))
+
+            {
+
+                dgvatt.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+
+            }
+
+            if (e.Value != null && e.Value.Equals("Enviado"))
+            {
+                dgvatt.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
+            }
+
+            if (e.Value != null && e.Value.Equals("Enviado"))
+
+            {
+                dgvatt.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Green;
+            }
+
         }
+
+        
 
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Pedidoatt frmPA = new Pedidoatt();
-            frmPA.ShowDialog();
-        }
+       
 
         private void btnaltfun_Click(object sender, EventArgs e)
         {
             Formfunc frmPA = new Formfunc();
-            frmPA.ShowDialog();
-            
+            frmPA.Show();
+
+            btnaltfun.Enabled = false;
+
+
+            {
+                btnaltfun.Enabled = true;
+            }
+
         }
 
         private void frmPedidos_Load(object sender, EventArgs e)
@@ -52,7 +76,7 @@ namespace Projeto_integrador
         private void atttable_Tick(object sender, EventArgs e)
         {
 
-           dgvatt.DataSource = null;
+            dgvatt.DataSource = null;
             //dgvatt.Rows.Clear();
             dgvatt.Columns.Clear();
             dgvatt.Refresh();
@@ -69,35 +93,45 @@ namespace Projeto_integrador
             da.Fill(tbusuarios);
             dgvatt.DataSource = tbusuarios;
 
-            /*MySqlDataReader dr = cmd.ExecuteReader();
-            int nColunas = dr.FieldCount;
-            for (int i = 0; i < nColunas; i++)
+        }
 
-                dgvatt.Columns.Add(dr.GetName(i).ToString(), dr.GetName(i).ToString());
-            string[] linhaDados = new string[nColunas];
 
-            while (dr.Read())
+
+
+
+
+
+
+        /*MySqlDataReader dr = cmd.ExecuteReader();
+        int nColunas = dr.FieldCount;
+        for (int i = 0; i < nColunas; i++)
+
+            dgvatt.Columns.Add(dr.GetName(i).ToString(), dr.GetName(i).ToString());
+        string[] linhaDados = new string[nColunas];
+
+        while (dr.Read())
+        {
+            for (int a = 0; a < nColunas; a++)
             {
-                for (int a = 0; a < nColunas; a++)
+                if (dr.GetFieldType(a).ToString() == "System.Int32")
                 {
-                    if (dr.GetFieldType(a).ToString() == "System.Int32")
-                    {
 
-                        linhaDados[a] = dr.GetInt32(a).ToString();
-                    }
-                    if (dr.GetFieldType(a).ToString() == "System.String")
-                    {
-                        linhaDados[a] = dr.GetString(a).ToString();
-                    }
-                    if (dr.GetFieldType(a).ToString() == "System.DateTime")
-                    {
-                        linhaDados[a] = dr.GetDateTime(a).ToString();*/
-
-
-                    }
+                    linhaDados[a] = dr.GetInt32(a).ToString();
                 }
+                if (dr.GetFieldType(a).ToString() == "System.String")
+                {
+                    linhaDados[a] = dr.GetString(a).ToString();
+                }
+                if (dr.GetFieldType(a).ToString() == "System.DateTime")
+                {
+                    linhaDados[a] = dr.GetDateTime(a).ToString();*/
 
-            }
+
+    }
+}
+                
+
+            
 
             /*dgvatt.Rows.Add(linhaDados);
 
