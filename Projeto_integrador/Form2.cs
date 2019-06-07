@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,13 +12,21 @@ using System.Windows.Forms;
 
 namespace Projeto_integrador
 {
+
+
+
+
+
     public partial class frmPedidos : Form
     {
+        private DataSet _DataSet;
+        private SqlConnection _Conn;
+        private SqlDataAdapter _DataAdapterProducts;
         public frmPedidos()
         {
             InitializeComponent();
             this.dgvatt.CellFormatting += Dgvatt_CellFormatting;
-            
+
 
 
         }
@@ -45,14 +54,14 @@ namespace Projeto_integrador
 
         }
 
-        
+
 
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-       
+
 
         private void btnaltfun_Click(object sender, EventArgs e)
         {
@@ -72,6 +81,7 @@ namespace Projeto_integrador
         {
 
         }
+
 
         private void atttable_Tick(object sender, EventArgs e)
         {
@@ -94,7 +104,8 @@ namespace Projeto_integrador
             dgvatt.DataSource = tbusuarios;
 
         }
-
+         
+         
 
 
 
