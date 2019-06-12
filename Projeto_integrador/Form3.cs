@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Projeto_integrador
 {
-    public partial class Formfunc : Form
+    public partial class Formfunc : MaterialSkin.Controls.MaterialForm
     {
         public Formfunc()
         {

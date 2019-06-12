@@ -36,7 +36,8 @@
             // 
             // btnFunc1
             // 
-            this.btnFunc1.Location = new System.Drawing.Point(12, 12);
+            this.btnFunc1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnFunc1.Location = new System.Drawing.Point(12, 76);
             this.btnFunc1.Name = "btnFunc1";
             this.btnFunc1.Size = new System.Drawing.Size(99, 23);
             this.btnFunc1.TabIndex = 0;
@@ -46,7 +47,8 @@
             // 
             // btnfunc2
             // 
-            this.btnfunc2.Location = new System.Drawing.Point(12, 86);
+            this.btnfunc2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnfunc2.Location = new System.Drawing.Point(12, 150);
             this.btnfunc2.Name = "btnfunc2";
             this.btnfunc2.Size = new System.Drawing.Size(99, 23);
             this.btnfunc2.TabIndex = 1;
@@ -56,7 +58,8 @@
             // 
             // btnfunc3
             // 
-            this.btnfunc3.Location = new System.Drawing.Point(12, 160);
+            this.btnfunc3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnfunc3.Location = new System.Drawing.Point(12, 224);
             this.btnfunc3.Name = "btnfunc3";
             this.btnfunc3.Size = new System.Drawing.Size(99, 23);
             this.btnfunc3.TabIndex = 2;
@@ -66,7 +69,8 @@
             // 
             // btnvoltar
             // 
-            this.btnvoltar.Location = new System.Drawing.Point(12, 226);
+            this.btnvoltar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnvoltar.Location = new System.Drawing.Point(12, 290);
             this.btnvoltar.Name = "btnvoltar";
             this.btnvoltar.Size = new System.Drawing.Size(99, 23);
             this.btnvoltar.TabIndex = 3;
@@ -78,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(123, 261);
+            this.ClientSize = new System.Drawing.Size(123, 325);
             this.ControlBox = false;
             this.Controls.Add(this.btnvoltar);
             this.Controls.Add(this.btnfunc3);

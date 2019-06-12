@@ -17,12 +17,9 @@ namespace Projeto_integrador
 
 
 
-    public partial class frmPedidos : Form
+    public partial class frmPedidos : MaterialSkin.Controls.MaterialForm
     {
-        private DataSet _DataSet;
-        private SqlConnection _Conn;
-        private SqlDataAdapter _DataAdapterProducts;
-        public frmPedidos()
+       public frmPedidos()
         {
             InitializeComponent();
             this.dgvatt.CellFormatting += Dgvatt_CellFormatting;
@@ -104,8 +101,20 @@ namespace Projeto_integrador
             dgvatt.DataSource = tbusuarios;
 
         }
-         
-         
+
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+            Estoque frmes = new Estoque();
+                frmes.Show();
+
+        }
+
+        private void btnfaturamento_Click(object sender, EventArgs e)
+        {
+            ppdfatu.Show();
+        }
+
+
 
 
 

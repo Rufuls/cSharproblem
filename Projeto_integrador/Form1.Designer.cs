@@ -40,48 +40,62 @@
             // 
             // txtLogin
             // 
+            this.txtLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin.Location = new System.Drawing.Point(65, 159);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(150, 20);
+            this.txtLogin.Size = new System.Drawing.Size(150, 23);
             this.txtLogin.TabIndex = 0;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(65, 201);
+            this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(65, 214);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(150, 20);
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(150, 23);
             this.txtSenha.TabIndex = 1;
             // 
             // lblLogin
             // 
+            this.lblLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(115, 143);
+            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.Location = new System.Drawing.Point(107, 139);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(43, 13);
+            this.lblLogin.Size = new System.Drawing.Size(57, 17);
             this.lblLogin.TabIndex = 2;
             this.lblLogin.Text = "Usuario";
             // 
             // lblSenha
             // 
+            this.lblSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(115, 185);
+            this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.Location = new System.Drawing.Point(115, 194);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(38, 13);
+            this.lblSenha.Size = new System.Drawing.Size(49, 17);
             this.lblSenha.TabIndex = 3;
             this.lblSenha.Text = "Senha";
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(98, 227);
+            this.btnEntrar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrar.Location = new System.Drawing.Point(97, 243);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 23);
             this.btnEntrar.TabIndex = 4;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            this.btnEntrar.Enter += new System.EventHandler(this.btnEntrar_Click);
             // 
             // btnSair
             // 
+            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.Location = new System.Drawing.Point(197, 273);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
@@ -92,6 +106,7 @@
             // 
             // rtBemvindo
             // 
+            this.rtBemvindo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rtBemvindo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtBemvindo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtBemvindo.Location = new System.Drawing.Point(46, 75);
@@ -102,6 +117,8 @@
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.Location = new System.Drawing.Point(12, 273);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
@@ -124,6 +141,7 @@
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtLogin);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

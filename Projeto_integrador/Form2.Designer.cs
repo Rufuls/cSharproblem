@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidos));
             this.dgvatt = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,12 +42,15 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.atttable = new System.Windows.Forms.Timer(this.components);
+            this.ppdfatu = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvatt)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvatt
             // 
-            this.dgvatt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvatt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvatt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -56,40 +60,42 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvatt.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvatt.Location = new System.Drawing.Point(28, 46);
+            this.dgvatt.Location = new System.Drawing.Point(71, 76);
             this.dgvatt.Name = "dgvatt";
             this.dgvatt.Size = new System.Drawing.Size(402, 206);
             this.dgvatt.TabIndex = 1;
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(167, 9);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(252, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Pedidos";
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(488, 9);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(515, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 13);
+            this.label3.Size = new System.Drawing.Size(101, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Funcionarios";
             // 
             // btnaltfun
             // 
-            this.btnaltfun.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnaltfun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnaltfun.Location = new System.Drawing.Point(480, 229);
+            this.btnaltfun.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnaltfun.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnaltfun.Location = new System.Drawing.Point(523, 252);
             this.btnaltfun.Name = "btnaltfun";
-            this.btnaltfun.Size = new System.Drawing.Size(95, 23);
+            this.btnaltfun.Size = new System.Drawing.Size(95, 30);
             this.btnaltfun.TabIndex = 6;
             this.btnaltfun.Text = "Alterar";
             this.btnaltfun.UseVisualStyleBackColor = true;
@@ -97,33 +103,35 @@
             // 
             // btnfaturamento
             // 
-            this.btnfaturamento.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnfaturamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfaturamento.Location = new System.Drawing.Point(117, 260);
+            this.btnfaturamento.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnfaturamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfaturamento.Location = new System.Drawing.Point(160, 290);
             this.btnfaturamento.Name = "btnfaturamento";
-            this.btnfaturamento.Size = new System.Drawing.Size(142, 23);
+            this.btnfaturamento.Size = new System.Drawing.Size(142, 31);
             this.btnfaturamento.TabIndex = 11;
             this.btnfaturamento.Text = "Faturamento";
             this.btnfaturamento.UseVisualStyleBackColor = true;
+            this.btnfaturamento.Click += new System.EventHandler(this.btnfaturamento_Click);
             // 
             // btnEstoque
             // 
-            this.btnEstoque.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstoque.Location = new System.Drawing.Point(290, 260);
+            this.btnEstoque.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstoque.Location = new System.Drawing.Point(299, 290);
             this.btnEstoque.Name = "btnEstoque";
-            this.btnEstoque.Size = new System.Drawing.Size(141, 23);
+            this.btnEstoque.Size = new System.Drawing.Size(141, 31);
             this.btnEstoque.TabIndex = 13;
             this.btnEstoque.Text = "Estoque";
             this.btnEstoque.UseVisualStyleBackColor = true;
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
             // 
             // btnSair
             // 
-            this.btnSair.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(28, 260);
+            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(71, 290);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(75, 23);
+            this.btnSair.Size = new System.Drawing.Size(75, 31);
             this.btnSair.TabIndex = 15;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -131,26 +139,29 @@
             // 
             // textfunc1
             // 
-            this.textfunc1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textfunc1.Location = new System.Drawing.Point(475, 46);
+            this.textfunc1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textfunc1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textfunc1.Location = new System.Drawing.Point(518, 76);
             this.textfunc1.Name = "textfunc1";
-            this.textfunc1.Size = new System.Drawing.Size(100, 20);
+            this.textfunc1.Size = new System.Drawing.Size(100, 23);
             this.textfunc1.TabIndex = 17;
             // 
             // textBox2
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(475, 105);
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(518, 135);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(100, 23);
             this.textBox2.TabIndex = 18;
             // 
             // textBox3
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Location = new System.Drawing.Point(475, 166);
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(518, 196);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(100, 23);
             this.textBox3.TabIndex = 19;
             // 
             // atttable
@@ -159,11 +170,21 @@
             this.atttable.Interval = 10000;
             this.atttable.Tick += new System.EventHandler(this.atttable_Tick);
             // 
+            // ppdfatu
+            // 
+            this.ppdfatu.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.ppdfatu.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.ppdfatu.ClientSize = new System.Drawing.Size(400, 300);
+            this.ppdfatu.Enabled = true;
+            this.ppdfatu.Icon = ((System.Drawing.Icon)(resources.GetObject("ppdfatu.Icon")));
+            this.ppdfatu.Name = "ppdfatu";
+            this.ppdfatu.Visible = false;
+            // 
             // frmPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(604, 307);
+            this.ClientSize = new System.Drawing.Size(690, 366);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textfunc1);
@@ -175,6 +196,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvatt);
             this.Name = "frmPedidos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pedidos";
             this.Load += new System.EventHandler(this.frmPedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvatt)).EndInit();
@@ -195,5 +217,6 @@
         private System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.TextBox textfunc1;
         private System.Windows.Forms.Timer atttable;
+        private System.Windows.Forms.PrintPreviewDialog ppdfatu;
     }
 }

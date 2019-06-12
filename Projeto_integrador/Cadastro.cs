@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace Projeto_integrador
 {
-    public partial class Cadastro : Form
+    public partial class Cadastro : MaterialSkin.Controls.MaterialForm
     {
         public Cadastro()
         {
