@@ -19,7 +19,7 @@ namespace Projeto_integrador
 
     public partial class frmPedidos : MaterialSkin.Controls.MaterialForm
     {
-       public frmPedidos()
+        public frmPedidos()
         {
             InitializeComponent();
             this.dgvatt.CellFormatting += Dgvatt_CellFormatting;
@@ -105,56 +105,110 @@ namespace Projeto_integrador
         private void btnEstoque_Click(object sender, EventArgs e)
         {
             Estoque frmes = new Estoque();
-                frmes.Show();
+            frmes.Show();
 
         }
 
         private void btnfaturamento_Click(object sender, EventArgs e)
         {
-            ppdfatu.Show();
+            ppdfatu.ShowDialog();
         }
 
-
-
-
-
-
-
-
-
-        /*MySqlDataReader dr = cmd.ExecuteReader();
-        int nColunas = dr.FieldCount;
-        for (int i = 0; i < nColunas; i++)
-
-            dgvatt.Columns.Add(dr.GetName(i).ToString(), dr.GetName(i).ToString());
-        string[] linhaDados = new string[nColunas];
-
-        while (dr.Read())
+        private void pdc_imprimir_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            for (int a = 0; a < nColunas; a++)
             {
-                if (dr.GetFieldType(a).ToString() == "System.Int32")
-                {
+                int X = 50;
+                int Y = 50;
 
-                    linhaDados[a] = dr.GetInt32(a).ToString();
+                Font minhafonte = new Font("Arial", 14, FontStyle.Bold);
+                e.Graphics.DrawString(this.Text, minhafonte, Brushes.Blue, X, Y);
+                e.Graphics.DrawString(DateTime.Now.ToString(), minhafonte, Brushes.Blue, X + 500, Y);
+                minhafonte = new Font("Arial", 12, FontStyle.Bold);
+
+                Y = Y + 100;
+                e.Graphics.DrawString("Numero de vendas", minhafonte, Brushes.Black, X, Y);
+                e.Graphics.DrawString("Itens", minhafonte, Brushes.Black, X + 250, Y);
+                e.Graphics.DrawString("Faturamento", minhafonte, Brushes.Black, X + 500, Y);
+
+                minhafonte = new Font("Arial", 12, FontStyle.Regular);
+
+                string consulta = "SELECT * FROM tbusuarios";
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = consulta;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = Conexao.abreConexao();
+
+                MySqlDataReader DR;
+
+                try
+                {
+                    DR = cmd.ExecuteReader();
+
+                    while (DR.Read())
+                    {
+                        Y = Y + 30;
+                        e.Graphics.DrawString(DR.GetValue(0).ToString(), minhafonte, Brushes.Black, X, Y);
+                        e.Graphics.DrawString(DR.GetValue(0).ToString(), minhafonte, Brushes.Black, X + 250, Y);
+                        e.Graphics.DrawString(DR.GetValue(0).ToString(), minhafonte, Brushes.Black, X + 500, Y);
+                    }
+                    DR.Close();
+                    cmd.Dispose();
                 }
-                if (dr.GetFieldType(a).ToString() == "System.String")
+
+
+                catch (Exception ex)
                 {
-                    linhaDados[a] = dr.GetString(a).ToString();
+                    MessageBox.Show(ex.Message);
                 }
-                if (dr.GetFieldType(a).ToString() == "System.DateTime")
+                finally
                 {
-                    linhaDados[a] = dr.GetDateTime(a).ToString();*/
+                    Conexao.fechaConexao();
+                }
+            }
+        }
+
+        #region método Modifica (para Update, Delete e Insert)
+        private void Modifica(string sql)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = sql;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Conexao.abreConexao();
+            try
+            {
+                if (MessageBox.Show("Deseja executar esta ação?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int result = cmd.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Ação realizada com sucesso!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao realizar esta ação!");
+                    }
+                    cmd.Dispose();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexao.fechaConexao();
+            }
+        }
+
+        #endregion
 
 
+        private void btnpendente_Click(object sender, EventArgs e)
+        {
+            string novo = String.Format("Insert Into tbusuarios Values({3})");
+            MessageBox.Show(novo);
+            Modifica(novo);
+        }
     }
 }
-                
-
-            
-
-            /*dgvatt.Rows.Add(linhaDados);
-
-        }
-    }
-}*/
