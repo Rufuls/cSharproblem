@@ -27,7 +27,7 @@ namespace Projeto_integrador
 
             string strconexao = @"Server = localhost; Database = dbsistema;
               Uid = Miranha; Pwd = 123";
-            string strSql = "SELECT * FROM tbusuarios";
+            string strSql = "SELECT * FROM tbestoque";
             MySqlConnection con = new MySqlConnection(strconexao);
             MySqlCommand cmd = new MySqlCommand(strSql, con);
             con.Open();

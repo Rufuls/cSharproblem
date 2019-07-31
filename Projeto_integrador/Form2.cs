@@ -30,7 +30,7 @@ namespace Projeto_integrador
 
         private void Dgvatt_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.Value != null && e.Value.Equals("Pendente"))
+            if (e.Value != null && e.Value.Equals("Cancelado"))
 
             {
 
@@ -38,20 +38,18 @@ namespace Projeto_integrador
 
             }
 
-            if (e.Value != null && e.Value.Equals("Enviado"))
-            {
-                dgvatt.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
-            }
-
-            if (e.Value != null && e.Value.Equals("Enviado"))
-
+            if (e.Value != null && e.Value.Equals("Entregue"))
             {
                 dgvatt.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Green;
             }
 
+            if (e.Value != null && e.Value.Equals("Pendente"))
+
+            {
+                dgvatt.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
+            }
+
         }
-
-
 
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -76,13 +74,25 @@ namespace Projeto_integrador
 
         private void frmPedidos_Load(object sender, EventArgs e)
         {
+            {
+                
+               
+               
+                
+               
 
+            }
+            
         }
 
 
         private void atttable_Tick(object sender, EventArgs e)
         {
+            atualizadgvatt();
+        }
 
+        private void atualizadgvatt()
+        {
             dgvatt.DataSource = null;
             //dgvatt.Rows.Clear();
             dgvatt.Columns.Clear();
@@ -98,8 +108,8 @@ namespace Projeto_integrador
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataTable tbusuarios = new DataTable();
             da.Fill(tbusuarios);
-            dgvatt.DataSource = tbusuarios;
 
+            dgvatt.DataSource = tbusuarios;
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
@@ -132,7 +142,7 @@ namespace Projeto_integrador
 
                 minhafonte = new Font("Arial", 12, FontStyle.Regular);
 
-                string consulta = "SELECT * FROM tbusuarios";
+                string consulta = "SELECT * FROM tbfuncionarios";
 
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = consulta;
@@ -149,8 +159,8 @@ namespace Projeto_integrador
                     {
                         Y = Y + 30;
                         e.Graphics.DrawString(DR.GetValue(0).ToString(), minhafonte, Brushes.Black, X, Y);
-                        e.Graphics.DrawString(DR.GetValue(0).ToString(), minhafonte, Brushes.Black, X + 250, Y);
-                        e.Graphics.DrawString(DR.GetValue(0).ToString(), minhafonte, Brushes.Black, X + 500, Y);
+                        e.Graphics.DrawString(DR.GetValue(1).ToString(), minhafonte, Brushes.Black, X + 250, Y);
+                        e.Graphics.DrawString(DR.GetValue(2).ToString(), minhafonte, Brushes.Black, X + 500, Y);
                     }
                     DR.Close();
                     cmd.Dispose();
@@ -206,9 +216,35 @@ namespace Projeto_integrador
 
         private void btnpendente_Click(object sender, EventArgs e)
         {
-            string novo = String.Format("Insert Into tbusuarios Values({3})");
-            MessageBox.Show(novo);
-            Modifica(novo);
+            int codigopedido = Convert.ToInt32(dgvatt.CurrentRow.Cells[0].Value);
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = String.Format("update tbusuarios set Status = 'Cancelado' where codigo = {0}", codigopedido);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Conexao.abreConexao();
+            int result = cmd.ExecuteNonQuery();
+            atualizadgvatt();
+        }
+
+        private void btnentregue_Click(object sender, EventArgs e)
+        {
+            int codigopedido = Convert.ToInt32(dgvatt.CurrentRow.Cells[0].Value);
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = String.Format("update tbusuarios set Status = 'Entregue' where codigo = {0}", codigopedido);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Conexao.abreConexao();
+            int result = cmd.ExecuteNonQuery();
+            atualizadgvatt();
+        }
+
+        private void btnsaiu_Click(object sender, EventArgs e)
+        {
+            int codigopedido = Convert.ToInt32(dgvatt.CurrentRow.Cells[0].Value);
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = String.Format("update tbusuarios set Status = 'Pendente' where codigo = {0}", codigopedido);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Conexao.abreConexao();
+            int result = cmd.ExecuteNonQuery();
+            atualizadgvatt();
         }
     }
 }
