@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
 using MySql.Data.MySqlClient;
 
 namespace Projeto_integrador
@@ -16,6 +17,10 @@ namespace Projeto_integrador
         public frmLogin()
         {
             InitializeComponent();
+            MaterialSkinManager tema = MaterialSkinManager.Instance;
+            tema.AddFormToManage(this);
+            tema.Theme = MaterialSkinManager.Themes.DARK; 
+
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -77,6 +82,7 @@ namespace Projeto_integrador
                     dr.Close();
                     frmPedidos frmPA = new frmPedidos();
                     frmPA.ShowDialog();
+                    
                 }
                 else
                 {
@@ -92,7 +98,9 @@ namespace Projeto_integrador
             finally
             {
                 Conexao.fechaConexao();
+
             }
+
         }
 
         private void txtLogin_KeyDown(object sender, KeyEventArgs e)

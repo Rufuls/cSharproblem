@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfunc));
             this.btnFunc1 = new System.Windows.Forms.Button();
             this.btnfunc2 = new System.Windows.Forms.Button();
             this.btnfunc3 = new System.Windows.Forms.Button();
@@ -88,6 +89,7 @@
             this.Controls.Add(this.btnfunc3);
             this.Controls.Add(this.btnfunc2);
             this.Controls.Add(this.btnFunc1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Formfunc";
             this.Text = "Funcionarios";
             this.ResumeLayout(false);

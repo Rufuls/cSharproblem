@@ -100,7 +100,7 @@ namespace Projeto_integrador
 
             string strconexao = @"Server = localhost; Database = dbsistema;
               Uid = Miranha; Pwd = 123";
-            string strSql = "SELECT * FROM tbusuarios";
+            string strSql = "SELECT * FROM pedidos";
             MySqlConnection con = new MySqlConnection(strconexao);
             MySqlCommand cmd = new MySqlCommand(strSql, con);
             con.Open();
@@ -115,7 +115,9 @@ namespace Projeto_integrador
         private void btnEstoque_Click(object sender, EventArgs e)
         {
             Estoque frmes = new Estoque();
-            frmes.Show();
+            
+            frmes.ShowDialog();
+            
 
         }
 
@@ -218,7 +220,7 @@ namespace Projeto_integrador
         {
             int codigopedido = Convert.ToInt32(dgvatt.CurrentRow.Cells[0].Value);
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = String.Format("update tbusuarios set Status = 'Cancelado' where codigo = {0}", codigopedido);
+            cmd.CommandText = String.Format("update pedidos set Status = 'Cancelado' where pedido = {0}", codigopedido);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Conexao.abreConexao();
             int result = cmd.ExecuteNonQuery();
@@ -229,7 +231,7 @@ namespace Projeto_integrador
         {
             int codigopedido = Convert.ToInt32(dgvatt.CurrentRow.Cells[0].Value);
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = String.Format("update tbusuarios set Status = 'Entregue' where codigo = {0}", codigopedido);
+            cmd.CommandText = String.Format("update pedidos set Status = 'Entregue' where pedido = {0}", codigopedido);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Conexao.abreConexao();
             int result = cmd.ExecuteNonQuery();
@@ -240,7 +242,7 @@ namespace Projeto_integrador
         {
             int codigopedido = Convert.ToInt32(dgvatt.CurrentRow.Cells[0].Value);
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = String.Format("update tbusuarios set Status = 'Pendente' where codigo = {0}", codigopedido);
+            cmd.CommandText = String.Format("update pedidos set Status = 'Pendente' where pedido = {0}", codigopedido);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Conexao.abreConexao();
             int result = cmd.ExecuteNonQuery();
