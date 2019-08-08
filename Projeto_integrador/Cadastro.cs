@@ -16,6 +16,7 @@ namespace Projeto_integrador
         public Cadastro()
         {
             InitializeComponent();
+
         }
 
         private void btnSair_Click(object sender, EventArgs e)
