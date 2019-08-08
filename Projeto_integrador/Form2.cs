@@ -98,18 +98,18 @@ namespace Projeto_integrador
             dgvatt.Columns.Clear();
             dgvatt.Refresh();
 
-            string strconexao = @"Server = localhost; Database = dbsistema;
-              Uid = Miranha; Pwd = 123";
-            string strSql = "SELECT * FROM pedidos";
+            string strconexao = @"Server = 10.23.49.33; Database = bd_agp;
+              Uid = zangado; Pwd = agp321";
+            string strSql = "SELECT * FROM tbvendas";
             MySqlConnection con = new MySqlConnection(strconexao);
             MySqlCommand cmd = new MySqlCommand(strSql, con);
             con.Open();
             cmd.CommandType = CommandType.Text;
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataTable tbusuarios = new DataTable();
-            da.Fill(tbusuarios);
+            DataTable tbvendas = new DataTable();
+            da.Fill(tbvendas);
 
-            dgvatt.DataSource = tbusuarios;
+            dgvatt.DataSource = tbvendas;
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
@@ -129,6 +129,7 @@ namespace Projeto_integrador
         private void pdc_imprimir_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             {
+
                 int X = 50;
                 int Y = 50;
 
@@ -140,11 +141,12 @@ namespace Projeto_integrador
                 Y = Y + 100;
                 e.Graphics.DrawString("Numero de vendas", minhafonte, Brushes.Black, X, Y);
                 e.Graphics.DrawString("Itens", minhafonte, Brushes.Black, X + 250, Y);
-                e.Graphics.DrawString("Faturamento", minhafonte, Brushes.Black, X + 500, Y);
+                e.Graphics.DrawString("Faturamento", minhafonte, Brushes.Black, X + 400, Y);
+                e.Graphics.DrawString("Total", minhafonte, Brushes.Black, X + 650, Y);
 
                 minhafonte = new Font("Arial", 12, FontStyle.Regular);
 
-                string consulta = "SELECT * FROM tbfuncionarios";
+                string consulta = "SELECT * FROM tbvendas ";
 
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = consulta;
@@ -160,9 +162,11 @@ namespace Projeto_integrador
                     while (DR.Read())
                     {
                         Y = Y + 30;
+                        decimal valorTotal = Convert.ToDecimal(DR.GetValue(1)) * Convert.ToDecimal(DR.GetValue(2));
                         e.Graphics.DrawString(DR.GetValue(0).ToString(), minhafonte, Brushes.Black, X, Y);
                         e.Graphics.DrawString(DR.GetValue(1).ToString(), minhafonte, Brushes.Black, X + 250, Y);
-                        e.Graphics.DrawString(DR.GetValue(2).ToString(), minhafonte, Brushes.Black, X + 500, Y);
+                        e.Graphics.DrawString(DR.GetValue(2).ToString(), minhafonte, Brushes.Black, X + 400, Y);
+                        e.Graphics.DrawString(valorTotal.ToString(), minhafonte, Brushes.Black, X + 650, Y);
                     }
                     DR.Close();
                     cmd.Dispose();
@@ -220,7 +224,7 @@ namespace Projeto_integrador
         {
             int codigopedido = Convert.ToInt32(dgvatt.CurrentRow.Cells[0].Value);
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = String.Format("update pedidos set Status = 'Cancelado' where pedido = {0}", codigopedido);
+            cmd.CommandText = String.Format("update tbvendas set Status = 'Cancelado' where cod_compra = {0}", codigopedido);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Conexao.abreConexao();
             int result = cmd.ExecuteNonQuery();
@@ -231,18 +235,20 @@ namespace Projeto_integrador
         {
             int codigopedido = Convert.ToInt32(dgvatt.CurrentRow.Cells[0].Value);
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = String.Format("update pedidos set Status = 'Entregue' where pedido = {0}", codigopedido);
+            cmd.CommandText = String.Format("update tbvendas set Status = 'Entregue' where cod_compra = {0}", codigopedido);
+            
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Conexao.abreConexao();
             int result = cmd.ExecuteNonQuery();
             atualizadgvatt();
+            
         }
 
         private void btnsaiu_Click(object sender, EventArgs e)
         {
             int codigopedido = Convert.ToInt32(dgvatt.CurrentRow.Cells[0].Value);
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = String.Format("update pedidos set Status = 'Pendente' where pedido = {0}", codigopedido);
+            cmd.CommandText = String.Format("update tbvendas set Status = 'Pendente' where cod_compra = {0}", codigopedido);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Conexao.abreConexao();
             int result = cmd.ExecuteNonQuery();

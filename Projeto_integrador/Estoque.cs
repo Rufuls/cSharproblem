@@ -59,17 +59,17 @@ namespace Projeto_integrador
             dgvestoque.Columns.Clear();
             dgvestoque.Refresh();
 
-            string strconexao = @"Server = localhost; Database = dbsistema;
-              Uid = Miranha; Pwd = 123";
+            string strconexao = @"Server = 10.23.49.33; Database = bd_agp;
+              Uid = zangado; Pwd = agp321";
             string strSql = "SELECT * FROM tbestoque";
             MySqlConnection con = new MySqlConnection(strconexao);
             MySqlCommand cmd = new MySqlCommand(strSql, con);
             con.Open();
             cmd.CommandType = CommandType.Text;
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataTable tbusuarios = new DataTable();
-            da.Fill(tbusuarios);
-            dgvestoque.DataSource = tbusuarios;
+            DataTable tbestoque = new DataTable();
+            da.Fill(tbestoque);
+            dgvestoque.DataSource = tbestoque;
         }
 
         private void btnvoltar_Click(object sender, EventArgs e)
@@ -79,6 +79,7 @@ namespace Projeto_integrador
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
+            /*string update = String.Format("Insert into tbestoque ='{0}' , '{1}', '{2}', '{3}', '{4}', '{5}'");*/
             string atualiza = String.Format("Update tbestoque Set Produto= '{0}', Unidade='{1}', where Produto == txtpro.text, numuni.Value");
 
             Modifica(atualiza);

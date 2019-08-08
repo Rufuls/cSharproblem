@@ -55,6 +55,7 @@
             this.dgvatt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvatt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvatt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -176,8 +177,7 @@
             // 
             // atttable
             // 
-            this.atttable.Enabled = true;
-            this.atttable.Interval = 1000;
+            this.atttable.Interval = 5000;
             this.atttable.Tick += new System.EventHandler(this.atttable_Tick);
             // 
             // ppdfatu

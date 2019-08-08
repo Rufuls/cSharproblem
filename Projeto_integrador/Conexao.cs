@@ -11,8 +11,8 @@ namespace Projeto_integrador
     class Conexao
     {
         private static string strconexao =
-            @"Server = localhost; Database = dbsistema;
-              Uid = Miranha; Pwd = 123";
+            @"Server = 10.23.49.33; Database = bd_agp;
+              Uid = zangado; Pwd = agp321";
         private static MySqlConnection Cn = new MySqlConnection(strconexao);
 
         public static MySqlConnection abreConexao()

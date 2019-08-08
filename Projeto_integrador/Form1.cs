@@ -69,8 +69,7 @@ namespace Projeto_integrador
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = String.Format(
-                "SELECT * FROM tbusuarios WHERE Login LIKE '{0}' and Senha LIKE '{1}'", txtLogin.Text, txtSenha.Text);
+            cmd.CommandText = String.Format("SELECT * FROM tbfuncionarios WHERE login_func LIKE '{0}' and senha_func LIKE '{1}'", txtLogin.Text, txtSenha.Text);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Conexao.abreConexao();
             MySqlDataReader dr;

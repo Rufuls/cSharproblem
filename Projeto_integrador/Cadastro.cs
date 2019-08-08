@@ -62,9 +62,18 @@ namespace Projeto_integrador
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            string sexo = null;
+            if (rbm.Checked)
+            {
+                sexo = "M";
+            }
+            else
+            {
+                sexo = "F";
+            }
             if (txtresenha.Text == txtSenha.Text)
             {
-                string Cadastrar = String.Format("INSERT INTO 'tbusuarios' VALUES ('{0}','{1}','{2}','{3}','{4}','{5}')", txtnome.Text, txtCel.Text, txtcpf.Text, txtrg.Text, txtemail.Text, txtSenha.Text, txtresenha.Text);
+                string Cadastrar = String.Format("INSERT INTO 'tbfuncionarios' VALUES ('{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')", txtnome.Text, dtp , txtrg.Text, txtcpf.Text, sexo, txtTel.Text , txtTel.Text, txtcarg.Text, txtemail.Text, txtlogin.Text, txtSenha.Text, txtresenha.Text);
                 modifica(Cadastrar);
             }
             else
