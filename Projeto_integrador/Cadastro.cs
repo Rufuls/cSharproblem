@@ -64,6 +64,11 @@ namespace Projeto_integrador
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             string sexo = null;
+            string data = (dtp.Value).ToString("yyyy/MM/dd");
+
+            //dtp.Format = DateTimePickerFormat.Custom;
+            //// Display the date as "Mon 27 Feb 2012".  
+            //dtp.CustomFormat = "yyyy/MM/dd";
             if (rbm.Checked)
             {
                 sexo = "M";
@@ -74,7 +79,8 @@ namespace Projeto_integrador
             }
             if (txtresenha.Text == txtSenha.Text)
             {
-                string Cadastrar = String.Format("INSERT INTO 'tbfuncionarios' VALUES ('{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')", txtnome.Text, dtp , txtrg.Text, txtcpf.Text, sexo, txtTel.Text , txtTel.Text, txtcarg.Text, txtemail.Text, txtlogin.Text, txtSenha.Text, txtresenha.Text);
+                string Cadastrar = String.Format("INSERT INTO tbfuncionarios VALUES (default,'{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}')", txtnome.Text, data , txtrg.Text, txtcpf.Text, sexo, txtTel.Text , txtcarg.Text, txtemail.Text, txtlogin.Text, txtSenha.Text);
+                MessageBox.Show(Cadastrar);
                 modifica(Cadastrar);
             }
             else

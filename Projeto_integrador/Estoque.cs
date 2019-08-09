@@ -79,10 +79,9 @@ namespace Projeto_integrador
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            /*string update = String.Format("Insert into tbestoque ='{0}' , '{1}', '{2}', '{3}', '{4}', '{5}'");*/
-            string atualiza = String.Format("Update tbestoque Set Produto= '{0}', Unidade='{1}', where Produto == txtpro.text, numuni.Value");
-
-            Modifica(atualiza);
+            string cadastro = String.Format("INSERT INTO tbEstoque VALUES ('{1}','{2}','{3}')",txtpro.Text, txtmarc.Text, numuni.Value);
+            MessageBox.Show(cadastro);
+            Modifica(cadastro);
         }
     }
 }

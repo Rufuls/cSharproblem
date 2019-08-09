@@ -37,8 +37,10 @@
             this.txtpro = new System.Windows.Forms.TextBox();
             this.lblprod = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.numuni = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtmarc = new System.Windows.Forms.TextBox();
+            this.numuni = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvestoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numuni)).BeginInit();
             this.SuspendLayout();
@@ -106,18 +108,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 184);
+            this.label1.Location = new System.Drawing.Point(38, 223);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.Size = new System.Drawing.Size(79, 17);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Unidade";
-            // 
-            // numuni
-            // 
-            this.numuni.Location = new System.Drawing.Point(136, 184);
-            this.numuni.Name = "numuni";
-            this.numuni.Size = new System.Drawing.Size(120, 20);
-            this.numuni.TabIndex = 6;
+            this.label1.Text = "Unidade -";
             // 
             // label2
             // 
@@ -132,11 +127,43 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Reabastecer";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(38, 181);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Marca -";
+            // 
+            // txtmarc
+            // 
+            this.txtmarc.Location = new System.Drawing.Point(136, 178);
+            this.txtmarc.Name = "txtmarc";
+            this.txtmarc.Size = new System.Drawing.Size(120, 20);
+            this.txtmarc.TabIndex = 9;
+            // 
+            // numuni
+            // 
+            this.numuni.Location = new System.Drawing.Point(136, 223);
+            this.numuni.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numuni.Name = "numuni";
+            this.numuni.Size = new System.Drawing.Size(120, 20);
+            this.numuni.TabIndex = 6;
+            // 
             // Estoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(718, 447);
+            this.Controls.Add(this.txtmarc);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.numuni);
             this.Controls.Add(this.label1);
@@ -164,7 +191,9 @@
         private System.Windows.Forms.TextBox txtpro;
         private System.Windows.Forms.Label lblprod;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numuni;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtmarc;
+        private System.Windows.Forms.NumericUpDown numuni;
     }
 }
