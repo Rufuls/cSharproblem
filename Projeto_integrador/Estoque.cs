@@ -27,7 +27,8 @@ namespace Projeto_integrador
             cmd.Connection = Conexao.abreConexao();
             try
             {
-                if (MessageBox.Show("Deseja executar esta ação?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Deseja executar esta ação?", "Atenção",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int result = cmd.ExecuteNonQuery();
                     if (result > 0)
@@ -61,15 +62,15 @@ namespace Projeto_integrador
 
             string strconexao = @"Server = 10.23.49.33; Database = bd_agp;
               Uid = zangado; Pwd = agp321";
-            string strSql = "SELECT * FROM tbestoque";
+            string strSql = "SELECT * FROM tb_estoque";
             MySqlConnection con = new MySqlConnection(strconexao);
             MySqlCommand cmd = new MySqlCommand(strSql, con);
             con.Open();
             cmd.CommandType = CommandType.Text;
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataTable tbestoque = new DataTable();
-            da.Fill(tbestoque);
-            dgvestoque.DataSource = tbestoque;
+            DataTable tb_estoque = new DataTable();
+            da.Fill(tb_estoque);
+            dgvestoque.DataSource = tb_estoque;
         }
 
         private void btnvoltar_Click(object sender, EventArgs e)
@@ -79,9 +80,18 @@ namespace Projeto_integrador
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            string cadastro = String.Format("INSERT INTO tbEstoque VALUES ('{1}','{2}','{3}')",txtpro.Text, txtmarc.Text, numuni.Value);
-            MessageBox.Show(cadastro);
-            Modifica(cadastro);
+            string inserir = null;
+
+                inserir = String.Format("INSERT INTO tb_estoque VALUES (default, '{0}', '{1}', '{2}','{3}')", txtpro.Text, txtmarc.Text, numuni.Value, txtmoney.Text);
+                MessageBox.Show(inserir);
+                Modifica(inserir);
+            
+            
+        }
+
+        private void txtpro_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

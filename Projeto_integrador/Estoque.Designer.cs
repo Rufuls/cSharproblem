@@ -41,6 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtmarc = new System.Windows.Forms.TextBox();
             this.numuni = new System.Windows.Forms.NumericUpDown();
+            this.txtmoney = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvestoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numuni)).BeginInit();
             this.SuspendLayout();
@@ -91,12 +93,14 @@
             this.txtpro.Name = "txtpro";
             this.txtpro.Size = new System.Drawing.Size(120, 20);
             this.txtpro.TabIndex = 3;
+            this.txtpro.TextChanged += new System.EventHandler(this.txtpro_TextChanged);
             // 
             // lblprod
             // 
             this.lblprod.AutoSize = true;
             this.lblprod.BackColor = System.Drawing.Color.Transparent;
             this.lblprod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblprod.ForeColor = System.Drawing.Color.White;
             this.lblprod.Location = new System.Drawing.Point(38, 140);
             this.lblprod.Name = "lblprod";
             this.lblprod.Size = new System.Drawing.Size(76, 17);
@@ -108,6 +112,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(38, 223);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 17);
@@ -121,6 +126,7 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(64, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(182, 33);
@@ -132,6 +138,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(38, 181);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
@@ -157,11 +164,32 @@
             this.numuni.Size = new System.Drawing.Size(120, 20);
             this.numuni.TabIndex = 6;
             // 
+            // txtmoney
+            // 
+            this.txtmoney.Location = new System.Drawing.Point(136, 262);
+            this.txtmoney.Name = "txtmoney";
+            this.txtmoney.Size = new System.Drawing.Size(120, 20);
+            this.txtmoney.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(38, 265);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Preço -";
+            // 
             // Estoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(718, 447);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtmoney);
             this.Controls.Add(this.txtmarc);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -195,5 +223,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtmarc;
         private System.Windows.Forms.NumericUpDown numuni;
+        private System.Windows.Forms.TextBox txtmoney;
+        private System.Windows.Forms.Label label4;
     }
 }
