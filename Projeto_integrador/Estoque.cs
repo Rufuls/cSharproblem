@@ -83,7 +83,7 @@ namespace Projeto_integrador
             string inserir = null;
 
                 inserir = String.Format("INSERT INTO tb_estoque VALUES (default, '{0}', '{1}', '{2}','{3}')", txtpro.Text, txtmarc.Text, numuni.Value, txtmoney.Text);
-                MessageBox.Show(inserir);
+                
                 Modifica(inserir);
             
             
@@ -92,6 +92,19 @@ namespace Projeto_integrador
         private void txtpro_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtatt_Click(object sender, EventArgs e)
+        {
+            string atualiza = String.Format("UPDATE tb_estoque SET nome_prod= '{0}',marca_prod= '{1}', qtd_prod= '{2}', preco_prod= '{3}' WHERE Nome_prod = '{0}' AND marca_prod ='{1}'", txtpro.Text, txtmarc.Text, numuni.Value, txtmoney.Text);
+            
+            Modifica(atualiza);
+        }
+
+        private void btndel_Click(object sender, EventArgs e)
+        {
+            string apaga = String.Format("Delete From tb_estoque Where cod_prod", txtdel.Text);
+            Modifica(apaga);
         }
     }
 }

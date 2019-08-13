@@ -97,6 +97,7 @@ namespace Projeto_integrador
             //dgvatt.Rows.Clear();
             dgvatt.Columns.Clear();
             dgvatt.Refresh();
+            
 
             string strconexao = @"Server = 10.23.49.33; Database = bd_agp;
               Uid = zangado; Pwd = agp321";
@@ -110,6 +111,16 @@ namespace Projeto_integrador
             da.Fill(tb_pedidos);
 
             dgvatt.DataSource = tb_pedidos;
+            this.dgvatt.Columns[0].Visible = false;
+            this.dgvatt.Columns[1].Visible = false;
+            this.dgvatt.Columns[2].Visible = false;
+            dgvatt.Columns[3].HeaderText = "Nome";
+            dgvatt.Columns[4].HeaderText = "Produto";
+            dgvatt.Columns[5].HeaderText = "Endereço";
+            dgvatt.Columns[6].HeaderText = "Data";
+            dgvatt.Columns[7].HeaderText = "Valor";
+            dgvatt.Columns[8].HeaderText = "Status de Entrega";
+
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
@@ -147,7 +158,7 @@ namespace Projeto_integrador
 
                 minhafonte = new Font("Arial", 12, FontStyle.Regular);
 
-                string consulta = "SELECT * FROM tb_pedidos";
+                string consulta = "SELECT * FROM tb_pedidos where status= Entregue";
 
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = consulta;
@@ -163,12 +174,12 @@ namespace Projeto_integrador
                     while (DR.Read())
                     {
                         Y = Y + 30;
-                        decimal valorTotal = Convert.ToDecimal(DR.GetValue(1)) * Convert.ToDecimal(DR.GetValue(4));
+                       // decimal valorTotal = Convert.ToDecimal(DR.GetValue(7)) * Convert.ToDecimal(DR.GetValue(7));
                         e.Graphics.DrawString(DR.GetValue(0).ToString(), minhafonte, Brushes.Black, X, Y);
                         e.Graphics.DrawString(DR.GetValue(1).ToString(), minhafonte, Brushes.Black, X + 250, Y);
                         e.Graphics.DrawString(DR.GetValue(2).ToString(), minhafonte, Brushes.Black, X + 300, Y);
                         e.Graphics.DrawString(DR.GetValue(3).ToString(), minhafonte, Brushes.Black, X + 400, Y);
-                        e.Graphics.DrawString(valorTotal.ToString(), minhafonte, Brushes.Black, X + 650, Y);
+                       // e.Graphics.DrawString(valorTotal.ToString(), minhafonte, Brushes.Black, X + 650, Y);
                     }
                     DR.Close();
                     cmd.Dispose();
@@ -226,7 +237,7 @@ namespace Projeto_integrador
         {
             int codigopedido = Convert.ToInt32(dgvatt.CurrentRow.Cells[0].Value);
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = String.Format("update tb_pedidos set Status = 'Cancelado' where cod_compra = {0}", codigopedido);
+            cmd.CommandText = String.Format("update tb_pedidos set Status = 'Cancelado' where num_ped = {0}", codigopedido);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Conexao.abreConexao();
             int result = cmd.ExecuteNonQuery();
@@ -237,7 +248,7 @@ namespace Projeto_integrador
         {
             int codigopedido = Convert.ToInt32(dgvatt.CurrentRow.Cells[0].Value);
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = String.Format("update tb_pedidos set Status = 'Entregue' where cod_compra = {0}", codigopedido);
+            cmd.CommandText = String.Format("update tb_pedidos set Status = 'Entregue' where num_ped = {0}", codigopedido);
             
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Conexao.abreConexao();
@@ -250,7 +261,7 @@ namespace Projeto_integrador
         {
             int codigopedido = Convert.ToInt32(dgvatt.CurrentRow.Cells[0].Value);
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = String.Format("update tb_pedidos set Status = 'Pendente' where cod_compra = {0}", codigopedido);
+            cmd.CommandText = String.Format("update tb_pedidos set Status = 'Pendente' where num_ped = {0}", codigopedido);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Conexao.abreConexao();
             int result = cmd.ExecuteNonQuery();

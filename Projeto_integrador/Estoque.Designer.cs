@@ -43,6 +43,9 @@
             this.numuni = new System.Windows.Forms.NumericUpDown();
             this.txtmoney = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtatt = new System.Windows.Forms.Button();
+            this.btndel = new System.Windows.Forms.Button();
+            this.txtdel = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvestoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numuni)).BeginInit();
             this.SuspendLayout();
@@ -55,14 +58,14 @@
             this.dgvestoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvestoque.Location = new System.Drawing.Point(360, 80);
             this.dgvestoque.Name = "dgvestoque";
-            this.dgvestoque.Size = new System.Drawing.Size(320, 306);
+            this.dgvestoque.Size = new System.Drawing.Size(566, 306);
             this.dgvestoque.TabIndex = 0;
             // 
             // btnvoltar
             // 
             this.btnvoltar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnvoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnvoltar.Location = new System.Drawing.Point(475, 392);
+            this.btnvoltar.Location = new System.Drawing.Point(598, 392);
             this.btnvoltar.Name = "btnvoltar";
             this.btnvoltar.Size = new System.Drawing.Size(75, 23);
             this.btnvoltar.TabIndex = 1;
@@ -79,7 +82,7 @@
             // btnInserir
             // 
             this.btnInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInserir.Location = new System.Drawing.Point(124, 363);
+            this.btnInserir.Location = new System.Drawing.Point(42, 392);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(75, 23);
             this.btnInserir.TabIndex = 2;
@@ -100,7 +103,7 @@
             this.lblprod.AutoSize = true;
             this.lblprod.BackColor = System.Drawing.Color.Transparent;
             this.lblprod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprod.ForeColor = System.Drawing.Color.White;
+            this.lblprod.ForeColor = System.Drawing.Color.Silver;
             this.lblprod.Location = new System.Drawing.Point(38, 140);
             this.lblprod.Name = "lblprod";
             this.lblprod.Size = new System.Drawing.Size(76, 17);
@@ -112,7 +115,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(38, 223);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 17);
@@ -126,7 +129,7 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(64, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(182, 33);
@@ -138,7 +141,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.Silver;
             this.label3.Location = new System.Drawing.Point(38, 181);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
@@ -176,18 +179,53 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.Color.Silver;
             this.label4.Location = new System.Drawing.Point(38, 265);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Preço -";
             // 
+            // txtatt
+            // 
+            this.txtatt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtatt.Location = new System.Drawing.Point(241, 392);
+            this.txtatt.Name = "txtatt";
+            this.txtatt.Size = new System.Drawing.Size(80, 23);
+            this.txtatt.TabIndex = 12;
+            this.txtatt.Text = "Atualizar";
+            this.txtatt.UseVisualStyleBackColor = true;
+            this.txtatt.Click += new System.EventHandler(this.txtatt_Click);
+            // 
+            // btndel
+            // 
+            this.btndel.BackColor = System.Drawing.Color.Transparent;
+            this.btndel.FlatAppearance.BorderSize = 0;
+            this.btndel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndel.Image = ((System.Drawing.Image)(resources.GetObject("btndel.Image")));
+            this.btndel.Location = new System.Drawing.Point(41, 298);
+            this.btndel.Name = "btndel";
+            this.btndel.Size = new System.Drawing.Size(58, 55);
+            this.btndel.TabIndex = 13;
+            this.btndel.UseVisualStyleBackColor = false;
+            this.btndel.Click += new System.EventHandler(this.btndel_Click);
+            // 
+            // txtdel
+            // 
+            this.txtdel.Location = new System.Drawing.Point(136, 317);
+            this.txtdel.Name = "txtdel";
+            this.txtdel.Size = new System.Drawing.Size(48, 20);
+            this.txtdel.TabIndex = 14;
+            // 
             // Estoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 447);
+            this.ClientSize = new System.Drawing.Size(964, 447);
+            this.Controls.Add(this.txtdel);
+            this.Controls.Add(this.btndel);
+            this.Controls.Add(this.txtatt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtmoney);
             this.Controls.Add(this.txtmarc);
@@ -225,5 +263,8 @@
         private System.Windows.Forms.NumericUpDown numuni;
         private System.Windows.Forms.TextBox txtmoney;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button txtatt;
+        private System.Windows.Forms.Button btndel;
+        private System.Windows.Forms.TextBox txtdel;
     }
 }
