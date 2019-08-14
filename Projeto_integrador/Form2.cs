@@ -35,6 +35,7 @@ namespace Projeto_integrador
             {
 
                 dgvatt.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                
 
             }
 
@@ -153,12 +154,11 @@ namespace Projeto_integrador
                 e.Graphics.DrawString("Numero de vendas", minhafonte, Brushes.Black, X, Y);
                 e.Graphics.DrawString("Itens", minhafonte, Brushes.Black, X + 250, Y);
                 e.Graphics.DrawString("Faturamento", minhafonte, Brushes.Black, X + 400, Y);
-                e.Graphics.DrawString("text",minhafonte, Brushes.Black, X + 500, Y);
                 e.Graphics.DrawString("Total", minhafonte, Brushes.Black, X + 650, Y);
 
                 minhafonte = new Font("Arial", 12, FontStyle.Regular);
 
-                string consulta = "SELECT * FROM tb_pedidos where status= Entregue";
+                string consulta = "SELECT * FROM tb_pedidos where status = 'Entregue'";
 
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = consulta;
@@ -175,10 +175,10 @@ namespace Projeto_integrador
                     {
                         Y = Y + 30;
                        // decimal valorTotal = Convert.ToDecimal(DR.GetValue(7)) * Convert.ToDecimal(DR.GetValue(7));
-                        e.Graphics.DrawString(DR.GetValue(0).ToString(), minhafonte, Brushes.Black, X, Y);
-                        e.Graphics.DrawString(DR.GetValue(1).ToString(), minhafonte, Brushes.Black, X + 250, Y);
-                        e.Graphics.DrawString(DR.GetValue(2).ToString(), minhafonte, Brushes.Black, X + 300, Y);
-                        e.Graphics.DrawString(DR.GetValue(3).ToString(), minhafonte, Brushes.Black, X + 400, Y);
+                        e.Graphics.DrawString(DR.GetValue(3).ToString(), minhafonte, Brushes.Black, X, Y);
+                        e.Graphics.DrawString(DR.GetValue(4).ToString(), minhafonte, Brushes.Black, X + 250, Y);
+                        e.Graphics.DrawString(DR.GetValue(7).ToString(), minhafonte, Brushes.Black, X + 400, Y);
+                        e.Graphics.DrawString(DR.GetValue(8).ToString(), minhafonte, Brushes.Black, X + 650, Y);
                        // e.Graphics.DrawString(valorTotal.ToString(), minhafonte, Brushes.Black, X + 650, Y);
                     }
                     DR.Close();
@@ -248,6 +248,7 @@ namespace Projeto_integrador
         {
             int codigopedido = Convert.ToInt32(dgvatt.CurrentRow.Cells[0].Value);
             MySqlCommand cmd = new MySqlCommand();
+
             cmd.CommandText = String.Format("update tb_pedidos set Status = 'Entregue' where num_ped = {0}", codigopedido);
             
             cmd.CommandType = CommandType.Text;
@@ -266,6 +267,12 @@ namespace Projeto_integrador
             cmd.Connection = Conexao.abreConexao();
             int result = cmd.ExecuteNonQuery();
             atualizadgvatt();
+        }
+
+        private void btndel_Click(object sender, EventArgs e)
+        {
+            string apaga = String.Format("Delete From tb_pedidos Where Status = 'Cancelado'", btndel.Text);
+            Modifica(apaga);
         }
     }
 }

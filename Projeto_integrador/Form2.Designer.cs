@@ -47,6 +47,7 @@
             this.btnentregue = new System.Windows.Forms.Button();
             this.btnsaiu = new System.Windows.Forms.Button();
             this.btnpendente = new System.Windows.Forms.Button();
+            this.btndel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvatt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +57,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvatt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvatt.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvatt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -67,7 +69,7 @@
             this.dgvatt.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvatt.Location = new System.Drawing.Point(71, 76);
             this.dgvatt.Name = "dgvatt";
-            this.dgvatt.Size = new System.Drawing.Size(518, 206);
+            this.dgvatt.Size = new System.Drawing.Size(579, 264);
             this.dgvatt.TabIndex = 1;
             // 
             // label2
@@ -76,7 +78,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(310, 39);
+            this.label2.Location = new System.Drawing.Point(340, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 4;
@@ -88,7 +90,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(631, 39);
+            this.label3.Location = new System.Drawing.Point(692, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 17);
             this.label3.TabIndex = 5;
@@ -98,7 +100,7 @@
             // 
             this.btnaltfun.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnaltfun.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnaltfun.Location = new System.Drawing.Point(639, 252);
+            this.btnaltfun.Location = new System.Drawing.Point(700, 281);
             this.btnaltfun.Name = "btnaltfun";
             this.btnaltfun.Size = new System.Drawing.Size(95, 30);
             this.btnaltfun.TabIndex = 6;
@@ -110,7 +112,7 @@
             // 
             this.btnfaturamento.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnfaturamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfaturamento.Location = new System.Drawing.Point(218, 290);
+            this.btnfaturamento.Location = new System.Drawing.Point(248, 348);
             this.btnfaturamento.Name = "btnfaturamento";
             this.btnfaturamento.Size = new System.Drawing.Size(142, 31);
             this.btnfaturamento.TabIndex = 11;
@@ -122,7 +124,7 @@
             // 
             this.btnEstoque.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstoque.Location = new System.Drawing.Point(357, 290);
+            this.btnEstoque.Location = new System.Drawing.Point(387, 348);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(141, 31);
             this.btnEstoque.TabIndex = 13;
@@ -134,7 +136,7 @@
             // 
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(71, 290);
+            this.btnSair.Location = new System.Drawing.Point(71, 348);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 31);
             this.btnSair.TabIndex = 15;
@@ -147,7 +149,7 @@
             this.textfunc1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textfunc1.Cursor = System.Windows.Forms.Cursors.Default;
             this.textfunc1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textfunc1.Location = new System.Drawing.Point(634, 76);
+            this.textfunc1.Location = new System.Drawing.Point(695, 105);
             this.textfunc1.Name = "textfunc1";
             this.textfunc1.ReadOnly = true;
             this.textfunc1.Size = new System.Drawing.Size(100, 23);
@@ -158,7 +160,7 @@
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(634, 135);
+            this.textBox2.Location = new System.Drawing.Point(695, 164);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 23);
@@ -169,7 +171,7 @@
             this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBox3.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(634, 196);
+            this.textBox3.Location = new System.Drawing.Point(695, 225);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(100, 23);
@@ -200,7 +202,7 @@
             // 
             this.btnentregue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnentregue.BackColor = System.Drawing.Color.Lime;
-            this.btnentregue.Location = new System.Drawing.Point(595, 76);
+            this.btnentregue.Location = new System.Drawing.Point(656, 76);
             this.btnentregue.Name = "btnentregue";
             this.btnentregue.Size = new System.Drawing.Size(30, 30);
             this.btnentregue.TabIndex = 20;
@@ -212,7 +214,7 @@
             // 
             this.btnsaiu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnsaiu.BackColor = System.Drawing.Color.Yellow;
-            this.btnsaiu.Location = new System.Drawing.Point(595, 135);
+            this.btnsaiu.Location = new System.Drawing.Point(656, 135);
             this.btnsaiu.Name = "btnsaiu";
             this.btnsaiu.Size = new System.Drawing.Size(30, 30);
             this.btnsaiu.TabIndex = 21;
@@ -223,18 +225,34 @@
             // 
             this.btnpendente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnpendente.BackColor = System.Drawing.Color.Red;
-            this.btnpendente.Location = new System.Drawing.Point(595, 196);
+            this.btnpendente.Location = new System.Drawing.Point(656, 196);
             this.btnpendente.Name = "btnpendente";
             this.btnpendente.Size = new System.Drawing.Size(30, 30);
             this.btnpendente.TabIndex = 22;
             this.btnpendente.UseVisualStyleBackColor = false;
             this.btnpendente.Click += new System.EventHandler(this.btnpendente_Click);
             // 
+            // btndel
+            // 
+            this.btndel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btndel.BackColor = System.Drawing.Color.Transparent;
+            this.btndel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndel.ForeColor = System.Drawing.Color.Transparent;
+            this.btndel.Image = ((System.Drawing.Image)(resources.GetObject("btndel.Image")));
+            this.btndel.Location = new System.Drawing.Point(656, 25);
+            this.btndel.Name = "btndel";
+            this.btndel.Size = new System.Drawing.Size(47, 46);
+            this.btndel.TabIndex = 23;
+            this.btndel.UseVisualStyleBackColor = false;
+            this.btndel.Click += new System.EventHandler(this.btndel_Click);
+            // 
             // frmPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(806, 366);
+            this.ClientSize = new System.Drawing.Size(867, 424);
+            this.ControlBox = false;
+            this.Controls.Add(this.btndel);
             this.Controls.Add(this.btnpendente);
             this.Controls.Add(this.btnsaiu);
             this.Controls.Add(this.btnentregue);
@@ -277,5 +295,6 @@
         private System.Windows.Forms.Button btnentregue;
         private System.Windows.Forms.Button btnsaiu;
         private System.Windows.Forms.Button btnpendente;
+        private System.Windows.Forms.Button btndel;
     }
 }

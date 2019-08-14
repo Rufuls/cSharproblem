@@ -103,7 +103,7 @@ namespace Projeto_integrador
 
         private void btndel_Click(object sender, EventArgs e)
         {
-            string apaga = String.Format("Delete From tb_estoque Where cod_prod", txtdel.Text);
+            string apaga = String.Format("Delete From tb_estoque Where cod_prod = '{0}'", txtdel.Text);
             Modifica(apaga);
         }
     }
