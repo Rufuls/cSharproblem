@@ -33,14 +33,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidos));
             this.dgvatt = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnaltfun = new System.Windows.Forms.Button();
             this.btnfaturamento = new System.Windows.Forms.Button();
             this.btnEstoque = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.textfunc1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.atttable = new System.Windows.Forms.Timer(this.components);
             this.ppdfatu = new System.Windows.Forms.PrintPreviewDialog();
             this.pdc_imprimir = new System.Drawing.Printing.PrintDocument();
@@ -48,6 +43,7 @@
             this.btnsaiu = new System.Windows.Forms.Button();
             this.btnpendente = new System.Windows.Forms.Button();
             this.btndel = new System.Windows.Forms.Button();
+            this.btnatt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvatt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,9 +63,9 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvatt.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvatt.Location = new System.Drawing.Point(71, 76);
+            this.dgvatt.Location = new System.Drawing.Point(143, 76);
             this.dgvatt.Name = "dgvatt";
-            this.dgvatt.Size = new System.Drawing.Size(579, 264);
+            this.dgvatt.Size = new System.Drawing.Size(536, 264);
             this.dgvatt.TabIndex = 1;
             // 
             // label2
@@ -78,35 +74,11 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(340, 39);
+            this.label2.Location = new System.Drawing.Point(384, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Pedidos";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(692, 68);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Funcionarios";
-            // 
-            // btnaltfun
-            // 
-            this.btnaltfun.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnaltfun.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnaltfun.Location = new System.Drawing.Point(700, 281);
-            this.btnaltfun.Name = "btnaltfun";
-            this.btnaltfun.Size = new System.Drawing.Size(95, 30);
-            this.btnaltfun.TabIndex = 6;
-            this.btnaltfun.Text = "Alterar";
-            this.btnaltfun.UseVisualStyleBackColor = true;
-            this.btnaltfun.Click += new System.EventHandler(this.btnaltfun_Click);
             // 
             // btnfaturamento
             // 
@@ -136,7 +108,7 @@
             // 
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(71, 348);
+            this.btnSair.Location = new System.Drawing.Point(33, 381);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 31);
             this.btnSair.TabIndex = 15;
@@ -144,43 +116,10 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // textfunc1
-            // 
-            this.textfunc1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textfunc1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textfunc1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textfunc1.Location = new System.Drawing.Point(695, 105);
-            this.textfunc1.Name = "textfunc1";
-            this.textfunc1.ReadOnly = true;
-            this.textfunc1.Size = new System.Drawing.Size(100, 23);
-            this.textfunc1.TabIndex = 17;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(695, 164);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 18;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(695, 225);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 19;
-            // 
             // atttable
             // 
             this.atttable.Enabled = true;
-            this.atttable.Interval = 5000;
+            this.atttable.Interval = 10000;
             this.atttable.Tick += new System.EventHandler(this.atttable_Tick);
             // 
             // ppdfatu
@@ -201,34 +140,39 @@
             // btnentregue
             // 
             this.btnentregue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnentregue.BackColor = System.Drawing.Color.Lime;
-            this.btnentregue.Location = new System.Drawing.Point(656, 76);
+            this.btnentregue.AutoSize = true;
+            this.btnentregue.BackColor = System.Drawing.Color.Green;
+            this.btnentregue.Location = new System.Drawing.Point(722, 76);
             this.btnentregue.Name = "btnentregue";
-            this.btnentregue.Size = new System.Drawing.Size(30, 30);
+            this.btnentregue.Size = new System.Drawing.Size(60, 30);
             this.btnentregue.TabIndex = 20;
-            this.btnentregue.Text = "   ";
+            this.btnentregue.Text = "Entregue";
             this.btnentregue.UseVisualStyleBackColor = false;
             this.btnentregue.Click += new System.EventHandler(this.btnentregue_Click);
             // 
             // btnsaiu
             // 
             this.btnsaiu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnsaiu.AutoSize = true;
             this.btnsaiu.BackColor = System.Drawing.Color.Yellow;
-            this.btnsaiu.Location = new System.Drawing.Point(656, 135);
+            this.btnsaiu.Location = new System.Drawing.Point(719, 134);
             this.btnsaiu.Name = "btnsaiu";
-            this.btnsaiu.Size = new System.Drawing.Size(30, 30);
+            this.btnsaiu.Size = new System.Drawing.Size(63, 30);
             this.btnsaiu.TabIndex = 21;
+            this.btnsaiu.Text = "Pendente";
             this.btnsaiu.UseVisualStyleBackColor = false;
             this.btnsaiu.Click += new System.EventHandler(this.btnsaiu_Click);
             // 
             // btnpendente
             // 
             this.btnpendente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnpendente.AutoSize = true;
             this.btnpendente.BackColor = System.Drawing.Color.Red;
-            this.btnpendente.Location = new System.Drawing.Point(656, 196);
+            this.btnpendente.Location = new System.Drawing.Point(714, 193);
             this.btnpendente.Name = "btnpendente";
-            this.btnpendente.Size = new System.Drawing.Size(30, 30);
+            this.btnpendente.Size = new System.Drawing.Size(68, 30);
             this.btnpendente.TabIndex = 22;
+            this.btnpendente.Text = "Cancelado";
             this.btnpendente.UseVisualStyleBackColor = false;
             this.btnpendente.Click += new System.EventHandler(this.btnpendente_Click);
             // 
@@ -236,15 +180,31 @@
             // 
             this.btndel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btndel.BackColor = System.Drawing.Color.Transparent;
+            this.btndel.FlatAppearance.BorderColor = System.Drawing.SystemColors.Window;
+            this.btndel.FlatAppearance.BorderSize = 0;
+            this.btndel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btndel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btndel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndel.ForeColor = System.Drawing.Color.Transparent;
             this.btndel.Image = ((System.Drawing.Image)(resources.GetObject("btndel.Image")));
-            this.btndel.Location = new System.Drawing.Point(656, 25);
+            this.btndel.Location = new System.Drawing.Point(722, 262);
             this.btndel.Name = "btndel";
             this.btndel.Size = new System.Drawing.Size(47, 46);
             this.btndel.TabIndex = 23;
             this.btndel.UseVisualStyleBackColor = false;
             this.btndel.Click += new System.EventHandler(this.btndel_Click);
+            // 
+            // btnatt
+            // 
+            this.btnatt.AutoSize = true;
+            this.btnatt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnatt.Location = new System.Drawing.Point(-1, 193);
+            this.btnatt.Name = "btnatt";
+            this.btnatt.Size = new System.Drawing.Size(138, 27);
+            this.btnatt.TabIndex = 24;
+            this.btnatt.Text = "Atualizar Rapido";
+            this.btnatt.UseVisualStyleBackColor = true;
+            this.btnatt.Click += new System.EventHandler(this.btnatt_Click);
             // 
             // frmPedidos
             // 
@@ -252,25 +212,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(867, 424);
             this.ControlBox = false;
+            this.Controls.Add(this.btnatt);
             this.Controls.Add(this.btndel);
             this.Controls.Add(this.btnpendente);
             this.Controls.Add(this.btnsaiu);
             this.Controls.Add(this.btnentregue);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textfunc1);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnEstoque);
             this.Controls.Add(this.btnfaturamento);
-            this.Controls.Add(this.btnaltfun);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvatt);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pedidos";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvatt)).EndInit();
             this.ResumeLayout(false);
@@ -281,14 +236,9 @@
         #endregion
         private System.Windows.Forms.DataGridView dgvatt;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnaltfun;
         private System.Windows.Forms.Button btnfaturamento;
         private System.Windows.Forms.Button btnEstoque;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        public System.Windows.Forms.TextBox textfunc1;
         private System.Windows.Forms.Timer atttable;
         private System.Windows.Forms.PrintPreviewDialog ppdfatu;
         private System.Drawing.Printing.PrintDocument pdc_imprimir;
@@ -296,5 +246,6 @@
         private System.Windows.Forms.Button btnsaiu;
         private System.Windows.Forms.Button btnpendente;
         private System.Windows.Forms.Button btndel;
+        private System.Windows.Forms.Button btnatt;
     }
 }

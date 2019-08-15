@@ -59,19 +59,7 @@ namespace Projeto_integrador
 
 
 
-        private void btnaltfun_Click(object sender, EventArgs e)
-        {
-            Formfunc frmPA = new Formfunc();
-            frmPA.Show();
-
-            btnaltfun.Enabled = false;
-
-
-            {
-                btnaltfun.Enabled = true;
-            }
-
-        }
+       
 
         private void frmPedidos_Load(object sender, EventArgs e)
         {
@@ -102,7 +90,7 @@ namespace Projeto_integrador
 
             string strconexao = @"Server = 10.23.49.33; Database = bd_agp;
               Uid = zangado; Pwd = agp321";
-            string strSql = "SELECT * FROM tb_pedidos";
+            string strSql = @"SELECT num_ped, nome_cli, nome_prod, end_cli, dt_ped, vlr_ped, status FROM tb_pedidos ";
             MySqlConnection con = new MySqlConnection(strconexao);
             MySqlCommand cmd = new MySqlCommand(strSql, con);
             con.Open();
@@ -112,15 +100,14 @@ namespace Projeto_integrador
             da.Fill(tb_pedidos);
 
             dgvatt.DataSource = tb_pedidos;
-            this.dgvatt.Columns[0].Visible = false;
-            this.dgvatt.Columns[1].Visible = false;
-            this.dgvatt.Columns[2].Visible = false;
-            dgvatt.Columns[3].HeaderText = "Nome";
-            dgvatt.Columns[4].HeaderText = "Produto";
-            dgvatt.Columns[5].HeaderText = "Endereço";
-            dgvatt.Columns[6].HeaderText = "Data";
-            dgvatt.Columns[7].HeaderText = "Valor";
-            dgvatt.Columns[8].HeaderText = "Status de Entrega";
+            dgvatt.Columns[0].HeaderText = "Pedido";
+            dgvatt.Columns[1].HeaderText = "Nome";
+            dgvatt.Columns[2].HeaderText = "PRoduto";
+            dgvatt.Columns[3].HeaderText = "Endereço";
+            dgvatt.Columns[4].HeaderText = "Data";
+            dgvatt.Columns[5].HeaderText = "Valor";
+            dgvatt.Columns[6].HeaderText = "Status";
+            
 
         }
 
@@ -273,6 +260,11 @@ namespace Projeto_integrador
         {
             string apaga = String.Format("Delete From tb_pedidos Where Status = 'Cancelado'", btndel.Text);
             Modifica(apaga);
+        }
+
+        private void btnatt_Click(object sender, EventArgs e)
+        {
+            atualizadgvatt();
         }
     }
 }

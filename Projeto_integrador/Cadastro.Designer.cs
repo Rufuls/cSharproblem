@@ -54,6 +54,10 @@
             this.txtlogin = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtsbn = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtend = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtnome
@@ -62,7 +66,7 @@
             this.txtnome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnome.Location = new System.Drawing.Point(23, 95);
             this.txtnome.Name = "txtnome";
-            this.txtnome.Size = new System.Drawing.Size(303, 23);
+            this.txtnome.Size = new System.Drawing.Size(145, 23);
             this.txtnome.TabIndex = 0;
             // 
             // txtTel
@@ -110,6 +114,7 @@
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(23, 379);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(145, 23);
             this.txtSenha.TabIndex = 5;
             // 
@@ -119,6 +124,7 @@
             this.txtresenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtresenha.Location = new System.Drawing.Point(23, 434);
             this.txtresenha.Name = "txtresenha";
+            this.txtresenha.PasswordChar = '*';
             this.txtresenha.Size = new System.Drawing.Size(145, 23);
             this.txtresenha.TabIndex = 6;
             // 
@@ -309,11 +315,55 @@
             this.label8.TabIndex = 31;
             this.label8.Text = "CPF*";
             // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(186, 70);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(92, 17);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "SobreNome";
+            // 
+            // txtsbn
+            // 
+            this.txtsbn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtsbn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsbn.Location = new System.Drawing.Point(189, 95);
+            this.txtsbn.Name = "txtsbn";
+            this.txtsbn.Size = new System.Drawing.Size(139, 23);
+            this.txtsbn.TabIndex = 33;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(159, 128);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(83, 17);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "Endereço*";
+            // 
+            // txtend
+            // 
+            this.txtend.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtend.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtend.Location = new System.Drawing.Point(162, 152);
+            this.txtend.Name = "txtend";
+            this.txtend.Size = new System.Drawing.Size(222, 23);
+            this.txtend.TabIndex = 35;
+            // 
             // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 510);
+            this.Controls.Add(this.txtend);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtsbn);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtlogin);
@@ -375,5 +425,9 @@
         private System.Windows.Forms.TextBox txtlogin;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtsbn;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtend;
     }
 }
